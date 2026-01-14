@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комплексне завдання: Методи розмітки та форми</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f4f4f4; }
+        
+        /* Навігація */
+        nav { background: #333; padding: 10px; margin-bottom: 20px; border-radius: 5px; }
+        nav a { color: white; margin-right: 15px; text-decoration: none; cursor: pointer; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+
+        /* Приховування сторінок */
+        .page { display: none; }
+        .active { display: block; }
+
+        /* Спільні стилі для блоків */
+        .header-box { background: #ffcc00; padding: 15px; border: 1px solid #000; position: relative; }
+        .white-rect { background: white; border: 1px solid black; width: 120px; height: 25px; display: inline-block; }
+        .footer-box { background: #ffcc00; padding: 15px; border: 1px solid #000; clear: both; }
+        
+        /* 1. TABLE Styles */
+        .table-layout { width: 100%; border-collapse: collapse; background: white; }
+        .table-layout td { border: 1px solid #000; padding: 10px; vertical-align: top; }
+
+        /* 2. FLOAT Styles */
+        .float-container { background: white; border: 1px solid #000; overflow: hidden; width: 100%; }
+        .fl-col { float: left; min-height: 300px; padding: 10px; box-sizing: border-box; }
+        .fl-2 { background: #3366ff; width: 20%; color: white; }
+        .fl-3 { background: #ff5050; width: 25%; }
+        .fl-4 { background: #ffffff; width: 30%; border-left: 5px solid white; border-right: 5px solid white; }
+        .fl-5 { background: #ff5050; width: 25%; }
+
+        /* 3. INLINE-BLOCK Styles */
+        .ib-container { background: white; border: 1px solid #000; font-size: 0; width: 100%; }
+        .ib-col { display: inline-block; vertical-align: top; font-size: 14px; padding: 10px; box-sizing: border-box; min-height: 300px; }
+        
+        /* 5. FORM Styles */
+        .form-container { max-width: 500px; margin: 20px auto; background: white; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input { width: 100%; padding: 8px; box-sizing: border-box; }
+        .required { color: red; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a onclick="showPage('table-page')">Таблиця</a>
+        <a onclick="showPage('float-page')">Float</a>
+        <a onclick="showPage('inline-page')">Inline-block</a>
+        <a onclick="showPage('candle-page')">Свічка</a>
+        <a onclick="showPage('form-page')">Форма</a>
+    </nav>
+
+    <div id="table-page" class="page active">
+        <h2>Розмітка за допомогою таблиці</h2>
+        <table class="table-layout">
+            <tr>
+                <td colspan="4" class="header-box">
+                    <div class="white-rect"></div>
+                    <h1 style="float: right; margin: 0;">1. Намисто</h1>
+                </td>
+            </tr>
+            <tr>
+                <td style="background: #3366ff; color: white; width: 20%;">
+                    <h3>2</h3>
+                    <p>Вона була однією з тих гарних, чарівних дівчат, що наче з примхи долі народжуються в сім’ях чиновників.</p>
+                </td>
+                <td style="background: #ff5050; width: 25%;">
+                    <h3>3</h3>
+                    <p>Вона не мала ні приданого, ні надій на спадок, ніякої можливості бути пізнаною, зрозумілою, коханою...</p>
+                </td>
+                <td style="background: #ffffff; width: 30%;">
+                    <h3>4</h3>
+                    <p>Вона страждала без краю, відчуваючи, що народилася для всіх витончених розкошів. Вона страждала від убогості свого житла, від обшарпаних стін.</p>
+                </td>
+                <td style="background: #ff5050; width: 25%;">
+                    <h3>5</h3>
+                    <p>А одного вечора чоловік її прийшов додому з тріумфуючим виглядом і подав їй великий конверт: "Ось тут щось для тебе".</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="footer-box">
+                    <h3>6</h3>
+                    <p>© Гі де Мопассан. Класика світової літератури.</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="float-page" class="page">
+        <h2>Розмітка за допомогою плаваючих блоків (Float)</h2>
+        <div class="float-container">
+            <div class="header-box">
+                <div class="white-rect"></div>
+                <h1 style="float: right; margin: 0;">1</h1>
+            </div>
+            <div class="fl-col fl-2">
+                <h3>2</h3>
+                <p>Вона вдягалася просто, бо не могла вдягатися гарно, але була така нещасна, наче й справді належала до вищого товариства.</p>
+            </div>
+            <div class="fl-col fl-3">
+                <h3>3</h3>
+                <p>У жінок немає ні касти, ні породи: краса, грація та чарівність замінюють їм походження та сім'ю.</p>
+            </div>
+            <div class="fl-col fl-4">
+                <h3>4</h3>
+                <p>Вона дивилася на велику залу, обвішану стародавнім шовком, на вишукані меблі, де стояли безцінні дрібнички.</p>
+            </div>
+            <div class="fl-col fl-5">
+                <h3>5</h3>
+                <p>Замість того, щоб зрадіти, як сподівався чоловік, вона з досадою кинула запрошення на стіл.</p>
+            </div>
+            <div class="footer-box">
+                <h3>6</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="inline-page" class="page">
+        <h2>Розмітка за допомогою inline-блоків</h2>
+        <div class="ib-container">
+            <div class="header-box" style="font-size: 16px;">
+                <div class="white-rect"></div>
+                <h1 style="float: right; margin: 0;">1</h1>
+            </div>
+            <div class="ib-col" style="background: #3366ff; color: white; width: 20%;">
+                <h3>2</h3>
+                <p>Коли вона сідала обідати за круглий стіл, накритий триденною скатертиною...</p>
+            </div><div class="ib-col" style="background: #ff5050; width: 25%;">
+                <h3>3</h3>
+                <p>...чоловік знімав кришку з супниці і вигукував: "О, яка добра юшка!"</p>
+            </div><div class="ib-col" style="background: #ffffff; width: 30%; border: 1px solid #eee;">
+                <h3>4</h3>
+                <p>А вона мріяла про розкішні обіди, про блискуче срібло, про стіни, завішані гобеленами.</p>
+            </div><div class="ib-col" style="background: #ff5050; width: 25%;">
+                <h3>5</h3>
+                <p>Вона не мала ні туалетів, ні коштовностей, нічого. А вона тільки це й любила.</p>
+            </div>
+            <div class="footer-box" style="font-size: 16px;">
+                <h3>6</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="candle-page" class="page">
+        <div style="text-align: center; background: #000; color: #fff; padding: 50px; border-radius: 10px;">
+            <h2>Сторінка з малюнком свічки</h2>
+            <img src="hhttps://upload.wikimedia.org/wikipedia/commons/d/dc/Candle_of_hope.JPG" alt="Палаюча свічка" style="max-width: 100%; height: 400px; border: 3px solid #ffcc00;">
+            <p style="margin-top: 20px; font-style: italic;">"Світло у темряві"</p>
+        </div>
+    </div>
+
+    <div id="form-page" class="page">
+        <div class="form-container">
+            <h2 style="text-align: center;">Реєстрація користувача</h2>
+            <form onsubmit="alert('Дані відправлено!'); return false;">
+                <div class="form-group">
+                    <label>Прізвище, ім'я, по батькові: <span class="required">*</span></label>
+                    <input type="text" name="user_name" required>
+                </div>
+                <div class="form-group">
+                    <label>Е-mail:</label>
+                    <input type="email" name="user_email">
+                </div>
+                <div class="form-group">
+                    <label>Дата народження: <span class="required">*</span></label>
+                    <input type="date" name="user_birthdate" required>
+                </div>
+                <div class="form-group">
+                    <label>Стать: <span class="required">*</span></label>
+                    <input type="radio" name="user_sex" value="Чоловіча" required> Чоловіча
+                    <input type="radio" name="user_sex" value="Жіноча" required style="width: auto; margin-left: 20px;"> Жіноча
+                </div>
+                <button type="submit" style="width: 100%; padding: 10px; background: #333; color: white; border: none; cursor: pointer; border-radius: 5px;">Надіслати</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Приховуємо всі сторінки
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Показуємо обрану
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
