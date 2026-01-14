@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Три методи розмітки сторінки</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        .demo-container {
+            background-color: #888; /* Сіра тінь, як на зразку */
+            width: 300px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        /* Загальні стилі для контенту всередині блоків */
+        .num { font-weight: bold; font-size: 20px; }
+        .white-rect { 
+            background: white; 
+            border: 1px solid black; 
+            width: 80px; 
+            height: 20px; 
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Лабораторна робота: Методи розмітки</h1>
+
+    <h2>1. Розмітка таблицею (Table)</h2>
+    <div class="demo-container">
+        <table style="width: 300px; border-collapse: collapse; background-color: white; border: 1px solid black;">
+            <tr>
+                <td colspan="4" style="background-color: #ffcc00; height: 50px; padding: 0 10px; position: relative;">
+                    <div class="white-rect"></div>
+                    <span style="float: right;" class="num">1</span>
+                </td>
+            </tr>
+            <tr style="height: 200px; text-align: center;">
+                <td style="background-color: #3366ff; width: 25%;" class="num">2</td>
+                <td style="background-color: #ff5050; width: 25%; border-left: 5px solid white;" class="num">3</td>
+                <td style="background-color: #ffffff; width: 25%; border-left: 5px solid white; border-right: 5px solid white;" class="num">4</td>
+                <td style="background-color: #ff5050; width: 25%;" class="num">5</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="background-color: #ffcc00; height: 50px; padding-left: 15px;" class="num">6</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>2. Розмітка плаваючими блоками (Float)</h2>
+    <style>
+        .fl-wrap { width: 300px; background: white; border: 1px solid black; overflow: hidden; }
+        .fl-header, .fl-footer { background: #ffcc00; width: 100%; height: 50px; clear: both; line-height: 50px; }
+        .fl-col { float: left; height: 200px; text-align: center; line-height: 200px; }
+        .fl-2 { background: #3366ff; width: 20%; }
+        .fl-3 { background: #ff5050; width: 20%; }
+        .fl-4 { background: #ffffff; width: 20%; border-left: 10px solid white; border-right: 10px solid white; }
+        .fl-5 { background: #ff5050; width: 20%; }
+        .fl-spacer { float: left; width: 10px; height: 200px; background: white; }
+    </style>
+    <div class="demo-container">
+        <div class="fl-wrap">
+            <div class="fl-header">
+                <div class="white-rect" style="margin-left: 10px; vertical-align: middle;"></div>
+                <span class="num" style="float: right; margin-right: 15px;">1</span>
+            </div>
+            <div class="fl-col fl-2 num">2</div>
+            <div class="fl-spacer"></div>
+            <div class="fl-col fl-3 num">3</div>
+            <div class="fl-col fl-4 num">4</div>
+            <div class="fl-col fl-5 num">5</div>
+            <div class="fl-footer num" style="padding-left: 15px;">6</div>
+        </div>
+    </div>
+
+    <h2>3. Розмітка inline-блоками</h2>
+    <style>
+        .ib-wrap { width: 300px; background: white; border: 1px solid black; font-size: 0; }
+        .ib-header, .ib-footer { background: #ffcc00; height: 50px; font-size: 20px; width: 100%; line-height: 50px; }
+        .ib-box { 
+            display: inline-block; 
+            vertical-align: top; 
+            height: 200px; 
+            font-size: 20px; 
+            text-align: center; 
+            line-height: 200px; 
+        }
+    </style>
+    <div class="demo-container">
+        <div class="ib-wrap">
+            <div class="ib-header">
+                <div class="white-rect" style="margin-left: 10px; vertical-align: middle;"></div>
+                <span class="num" style="float: right; margin-right: 15px;">1</span>
+            </div>
+            <div class="ib-box num" style="background: #3366ff; width: 20%;">2</div><div style="display:inline-block; width: 5%; height: 200px; background: white;"></div><div class="ib-box num" style="background: #ff5050; width: 20%;">3</div><div style="display:inline-block; width: 5%; height: 200px; background: white;"></div><div class="ib-box num" style="background: #ffffff; width: 25%; border-left: 2px solid #ccc; border-right: 2px solid #ccc;">4</div><div style="display:inline-block; width: 5%; height: 200px; background: white;"></div><div class="ib-box num" style="background: #ff5050; width: 20%;">5</div>
+            <div class="ib-footer num" style="padding-left: 15px;">6</div>
+        </div>
+    </div>
+
+</body>
+</html>
